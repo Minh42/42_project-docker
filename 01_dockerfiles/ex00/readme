@@ -1,0 +1,2 @@
+docker build -t minh42/alpine:latest $PWD
+docker run minh42/alpine
