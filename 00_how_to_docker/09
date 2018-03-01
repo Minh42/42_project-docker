@@ -1,6 +1,4 @@
-docker pull debian
-docker run -it --rm debian /bin/bash
-apt-get update
-apt-get upgrade
-apt-get install gcc
-apt-get install git
+apt-get update && \
+apt-get upgrade -y && \
+apt-get install -y gcc && \
+apt-get install -y git

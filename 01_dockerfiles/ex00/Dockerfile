@@ -5,3 +5,6 @@ Run apk update && \
     apk add vim
 
 CMD vim
+
+#docker build -t minh42/alpine:latest $PWD
+#docker run -it minh42/alpine

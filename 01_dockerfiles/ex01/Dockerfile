@@ -32,3 +32,6 @@ WORKDIR $TS_DIRECTORY
 
 # Run shell script to get root's id and token
 ENTRYPOINT ["./ts3server_minimal_runscript.sh", "createinifile=1"]
+
+#docker build -t minh42/debian:latest $PWD
+#docker run --name teamspeak -e TS3SERVER_LICENSE=accept -p 9987:9987/udp -p 30033:30033 -p 10011:10011 -p 41144:41144 minh42/debian
