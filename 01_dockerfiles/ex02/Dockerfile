@@ -1,18 +1,12 @@
-FROM ruby:latest
+FROM ruby:2.3.4
 
-RUN mkdir -p /opt/app
-WORKDIR /opt/app
+RUN apt-get update && apt-get install -y nodejs && gem install rails && mkdir -p /opt/app
 
-RUN apt-get update && \
-    apt-get install -y nodejs && \
-    apt-get install -y sqlite3 && \
-    gem install rails && \
-    rm -rf /var/lib/apt/lists/*
+ONBUILD COPY . /opt/app
+ONBUILD WORKDIR /opt/app
+ONBUILD EXPOSE 3000
+ONBUILD RUN bundle install && rake db:migrate && rake db:seed
 
-COPY . /opt/app
-
-EXPOSE 3000
-
-ONBUILD RUN bundle install && \
-            rake db:migrate && \
-            rake db:seed 
+#docker build -t minh42/ruby:latest $PWD
+#docker build -t minh42/ruby:2.3.4 /Users/mpham/Documents/docker/01_dockerfiles/ex02
+#docker build -f Dockerfile .
