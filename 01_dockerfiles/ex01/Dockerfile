@@ -11,7 +11,7 @@ RUN apt-get update && \
     apt-get install -y bzip2 && \
     apt-get install -y w3m && \
     apt-get install -y wget && \
-    wget http://dl.4players.de/ts/releases/${TSV}/teamspeak3-server_linux_amd64-${TSV}.tar.bz2 -0 /tmp/teamspeak.tar.bz2 && \
+    wget http://dl.4players.de/ts/releases/${TSV}/teamspeak3-server_linux_amd64-${TSV}.tar.bz2 -O /tmp/teamspeak.tar.bz2 && \
     tar jxf /tmp/teamspeak.tar.bz2 -C /opt && \
     mv /opt/teamspeak3-server_* ${TS_DIRECTORY} && \
     rm /tmp/teamspeak.tar.bz2 && \

@@ -1,2 +1,2 @@
 docker build -t minh42/debian:latest $PWD
-docker run -d --name test1 -e TS3SERVER_LICENSE=accept -p 9987:9987/UDP -p 30033:30033 -p 10011:10011 -p 41144:41144 minh42/debian
+docker run -d --name test1 -e -p 9987:9987/UDP -p 30033:30033 -p 10011:10011 -p 41144:41144 minh42/debian
